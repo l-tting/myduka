@@ -82,3 +82,63 @@ conn.commit() -updates the database with the new state
 3.create two functions to do the following:
        -> insert 2 sales using psycopg2 -> insert_sales()
        -> view my sales data using psycopg2 -> get_sales()
+
+
+
+                        OBJECT ORIENTED PROGRAMMING
+--> We have the following broad categories of classifying data types:\
+1.Inbuilt data types - data types that come with the programming language
+    e.g. Python ---> int,float,str,bool,list,tuple,set,dict
+
+2.User defined data types - are data types created by the programmer -enabled by the
+use of classes and objects e.g. Person, Student, Car
+
+**OOP** -A programming paradigm that builds programs around classes and objects
+**Classes**
+-->A blueprint or a template for creating objects
+**Objects**
+-->An instance of a class
+
+--> A class has the following 2 things:
+1.Attributes 
+    ->Variables holding data in a class
+    -> Answers the question : what does a class have?
+    e.g. class Person - name, age, height, weight,marital_status, address etc
+        class Car - engine, yom, make, model, colour etc
+        class Laptop - width, ram, processors
+
+2.Behaviour 
+    -> Defined by methods
+    -> Methods are simply functions inside classes
+    ->Behaviour answers the question: what can a class do?
+    e.g class Person - walk , talk, eat, sleep, work
+        class Car - start, move, stop
+        class Laptop - start,power off, code, send mail
+
+**Methods** - functions inside classes
+**Constructor** - a special method used to initialize objects
+-> It is automatically called when an object is created
+-> Python's constructor is __init__
+** def __init__(self,parameters)
+**Self** - refers the object itself
+**parameters** -attributes of the class
+
+
+OOP Task
+1.Create a class called BankAccount with the following attributes:
+ -account number
+ -balance
+ -owner name
+ -date opened
+2.Give the above BankAccount class the following behaviour or methods:
+ -deposit()
+ -withdraw()
+ -display_info()
+3.Create 2 BankAccount objects that can deposit, withdraw and display_info
+
+
+
+
+
+
+
