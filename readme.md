@@ -162,9 +162,8 @@ from another class
 
 
 **Method Overriding**
--> This is where a child class provides its own implementation of a method that already exists
-in the parent class
--> The child's method replaces the parent's method when called by aa child object
+-> This is where a child class provides its own implementation of a method that already exists in the parent class
+-> The child's method replaces the parent's method when called by a child object
 -> This is part of the POLYMORPHISM concept
 
 
@@ -192,6 +191,45 @@ Have the methods
        b)Teacher class with:
               -additional attributes - subject, salary
               -override display_info() to include subject and salary
+
+
+**super()** - a keyword used by a child class to access methods and attributes from a parent class
+
+**__str__** - a special method used to display objects in a user-friendly string form when a user tries to print the object directly
+-> It is part of a broader class of methods called dunder (double underscore) methods which contain leading and trailing underscores to make the appear like in-built methods
+
+**Inheritance**
+**Polymorphism** --*method overriding + method overloading*
+**Abstraction**
+**Encapsulation**
+
+
+FLASK 
+Flask is a Python framework used to build web applications
+
+**Understanding Frameworks vs Libraries**
+Analogy : BUILDING A HOUSE
+
+Scenario 1 ----> FRAMEWORK
+Henry wants to build a house. Henry is not an expert in building or construction. Knowing this 
+he enlists the help of construction experts (architect,engineer,pm,construction workers). These experts play a key role in building the house and make the process easier since they have more experience. But for this house to be built successfully to completion, Henry has to follow strict guidelines / rules as laid out by these experts e.g. materials needed 
+Note ---> The process is easier but has very strict guidelines to be followed
+
+Scenario 2 ----> LIBRARY
+Peace wants to build a house. Peace is a construction expert and he decides he doesn't need the help of experts, he's going to build the house himself from scracth. He has to design and know and purchase all materials himself.Since he oversees the process himself , there is no strict guideline or timeline. 
+Note ---> The process is hard but flexible
+
+*Framework* - A prebuilt structure of code and tools used to help developers build applications
+by not having to create them from scratch --- they easen development but have very strict guidelines on usage
+
+Examples of frameworks:
+Python --> Flask , FastAPI, Django 
+JavaScript -> React, Angular , Vue, Svelte
+Java -> Spring
+C# -> .NET
+Ruby -> Ruby on Rails
+Go -> Gin
+NodeJS -> Express
 
 
 
