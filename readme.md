@@ -268,10 +268,12 @@ N/B:- **Every view function must have its own unique name**
 
 2. Adjust your project structure to have the structure below:
 MyDuka
-->database.py
-->main.py
-->static (folder)
-->templates (folder)
+->database.py ---> db connection
+->main.py. ---> running Flask app
+->static (folder) 
+    **contains all static files - css, images , videos, icons , favicons
+->templates (folder) -> contains all your html files
+        *a single html file is called a template*
        -index.html
        -products.html
        -sales.html
@@ -280,4 +282,21 @@ MyDuka
        -register.html
 
 
+*Instead of returning raw data in our routes , we instead return / render full html pages and the subsequently render our
+data in those pages
+*To render /return html pages in Flask , we use a function called render_template() which is imported from Flask
+*The render_template() function takes as an argument the name of a html file in string format
+e.g. render_template("index.html")
 
+**TEMPLATE INHERITANCE**
+A mechanism of reducing redundancy in creating html files by having one base template which contains all common
+html components e.g navbar , footer
+-> Uses Jinja syntax
+-> Create one base template -> base.html, layout.html
+-> Have the other html files inherit common features from it
+
+{% extends 'base.html' %} --> inherit features from base template
+{% block title  %} {% endblock %}---> where to put my title for child templates
+{% block content  %} {% endblock %} --> block where you place each page's unique content
+
+Task: - Apply template inheritance to the remaining html files
