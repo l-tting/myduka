@@ -14,12 +14,13 @@ def home():
 @app.route('/products')
 def fetch_products():
     products = get_products()
-    return render_template("products.html")
+    return render_template("products.html",products=products)
 
 
 @app.route('/sales')
 def fetch_sales():
-    return render_template("sales.html")
+    sales = get_sales()
+    return render_template("sales.html",sales=sales)
 
 
 @app.route('/dashboard')
@@ -37,5 +38,8 @@ def register():
     return render_template("register.html")
 
 
+
 app.run(debug=True)
+
+
 

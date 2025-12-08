@@ -295,8 +295,42 @@ html components e.g navbar , footer
 -> Create one base template -> base.html, layout.html
 -> Have the other html files inherit common features from it
 
-{% extends 'base.html' %} --> inherit features from base template
-{% block title  %} {% endblock %}---> where to put my title for child templates
-{% block content  %} {% endblock %} --> block where you place each page's unique content
+{% extends 'base.html' %} ---> inherit features from base template
+{% block title  %} {% endblock %} ---> where to put my title for child templates
+{% block content  %} {% endblock %} ---> block where you place each page's unique content
 
-Task: - Apply template inheritance to the remaining html files
+Task: - Apply template inheritance to the remaining html files 
+
+
+Rendering Data to a Browser using Tables
+Database -----> Python -----> Client (browser)
+
+To render data with Flask we have to use Jinja
+
+**Jinja**
+-> A templating engine integrated with Flask to render dynamic html pages
+-> A syntax inbuilt with Flask to render Python data
+
+**Key features of Jinja**
+1.When handling variables: --we use the following Jinja syntax :- {{}}
+2.When using control structures: we use the following sytnax : {% %}
+*Control Structures*
+-> Are the building blocks that determine then flow and execution of a program
+a)Sequence
+-> A program will execute top to bottom, left to right
+b)Selection
+-> Allows a program to make decisions
+-> Conditional statements --> if...else...
+c)Repitition
+--> A block of code can be executed repeatedly
+--> Loops (for & while loop)
+
+        {% for... %} ----> initialization
+
+
+        {% endfor %} ----> termination 
+
+        {% if ... %}
+
+
+        {% endif %}
