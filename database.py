@@ -15,6 +15,9 @@ def get_products():
 def insert_products(values):
     cur.execute(f"insert into products(name,buying_price,selling_price)values{values}")
     conn.commit()
+
+product = ("eggs",15,20)
+insert_products(product)
    
 
 

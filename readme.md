@@ -334,3 +334,61 @@ c)Repitition
 
 
         {% endif %}
+
+**POSTING DATA FROM THE CLIENT**
+Posting -  sending data to a server
+
+*Steps*
+1.User is provided with a form to fill some data
+2.User submits the form --- submitted to a Flask Route 
+3.Flask extracts data from the form and processes it 
+     -> Data coming from this form comes in the format of key-value pairs
+     -> any data coming from user input is always a string
+     "product_name":"Eggs"
+     "buying_price":"15"
+     "selling_price":"20"
+
+     value -> whatever the user fills in the form
+     key -> defined by the name attribute in form input
+     -> We extract form data using a request object which has access to the following methods:
+         a) request.form  - used to access and extract form values using the key
+         b) request.method - method used to determine method defined in the form
+         *import request from flask*
+4.Store / Insert data using functions
+5.Redirect the user 
+    -> we redirect a  user using the redirect and url_for methods
+    -> redirect() -> functionality to enable redirection
+    -> url_for() - where exactly do I take a user?
+                - takes the name of the view function as a parameter
+
+
+**Form Checklist**
+a)action attribute 
+    -> an attribute that defines the route where the form data is to be submitted for processing
+    e.g action='/add_products'
+b)method
+    -> what do you want the server to do with the resource / data
+c)name attribute
+    -> a key used to access and extract values from the form input
+d)input type 
+    -text, number , email , password
+e)button - type submit
+
+        *HTTP Methods*
+        GET - getting /fetching data e.g.displaying products/ sales , seeing ig posts /tweets
+        POST - sending data to a server e.g. adding products, making sales, tweeting,
+        PUT - updating an existing resource e.g. changing password, changing product name
+        DELETE - getting rid of a resource - deleting a product
+
+        *HTTP status codes*
+        100-199 - Informational responses
+        200-299 - Successful responses
+        300-399 - Redirection messages
+        400-499 - Client error
+        500-599 - Server errors
+
+
+
+**TASK**
+1.Attempt the following:
+---> Insert at least one sale using a form in a modal
