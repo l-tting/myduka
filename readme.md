@@ -388,7 +388,9 @@ e)button - type submit
         500-599 - Server errors
 
 
-
 **TASK**
 1.Attempt the following:
 ---> Insert at least one sale using a form in a modal
+
+**TASK**
+1.

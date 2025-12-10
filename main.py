@@ -1,22 +1,24 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_products,get_sales,insert_products
+from database import get_products,get_sales,insert_products,insert_sales
 
 
 #Flask instance
 app = Flask(__name__)
 
-
+#index route
 @app.route("/")
 def home():
     return render_template("index.html") 
 
 
+#getting products
 @app.route('/products')
 def fetch_products():
     products = get_products()
     return render_template("products.html",products=products)
 
 
+#posting products
 @app.route('/add_products',methods=['GET','POST'])
 def add_products():
     product_name = request.form["product_name"]
@@ -27,10 +29,23 @@ def add_products():
     return redirect(url_for('fetch_products'))
 
 
+#getting sales
 @app.route('/sales')
 def fetch_sales():
     sales = get_sales()
-    return render_template("sales.html",sales=sales)
+    products = get_products()
+    return render_template("sales.html",sales=sales,products = products)
+
+
+#posting sales
+@app.route('/add_sale',methods=['GET','POST'])
+def add_sale():
+    pid = request.form["pid"]
+    quantity = request.form["quantity"]
+    new_sale = (pid,quantity)
+    insert_sales(new_sale)
+    return redirect(url_for('fetch_sales'))
+
 
 
 @app.route('/dashboard')
