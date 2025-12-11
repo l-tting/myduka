@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database import get_products,get_sales,insert_products,insert_sales
+from database import get_products,get_sales,insert_products,insert_sales,available_stock
 
 
 #Flask instance
@@ -43,6 +43,10 @@ def add_sale():
     pid = request.form["pid"]
     quantity = request.form["quantity"]
     new_sale = (pid,quantity)
+    check_stock = available_stock(pid) 
+    if check_stock < quantity:
+        print("Insufficient stock")
+        return redirect(url_for('fetch_sales'))
     insert_sales(new_sale)
     return redirect(url_for('fetch_sales'))
 

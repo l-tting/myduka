@@ -17,9 +17,6 @@ def insert_products(values):
     conn.commit()
 
 
-   
-
-
 def get_sales():
     cur.execute("select * from sales")
     sales = cur.fetchall()
@@ -36,6 +33,17 @@ def insert_sales(values):
 def insert_sales_2(values):
     cur.execute("insert into sales(pid,quantity)values(%s,%s)",values)
     conn.commit()
+
+
+def available_stock(pid):
+    cur.execute(f'select sum(stock_quantity) from stock where pid = {pid} ')
+    total_stock = cur.fetchone()[0] or 0
+
+    cur.execute(f'select sum(quantity) from sales where pid = {pid}')
+    total_sales = cur.fetchone()[0] or 0
+
+    return total_stock - total_sales
+
 
 
 

@@ -392,5 +392,76 @@ e)button - type submit
 1.Attempt the following:
 ---> Insert at least one sale using a form in a modal
 
-**TASK**
-1.
+
+*Making Purchases*
+-> Check for avalaible stock before completing a sale
+-> If enough stock is available , complete sale
+-> If stock not enough, display insufficient
+
+1 , 1000
+
+id |    name    | buying_price | selling_price 
+----+------------+--------------+---------------
+  1 | bread      |        50.00 |         60.00
+  2 | milk       |        40.00 |         50.00
+
+#sales#
+ id | pid | quantity |         created_at         
+----+-----+----------+----------------------------
+  5 |   1 |      100 | 2025-12-11 18:47:57.089801
+  6 |   2 |      200 | 2025-12-11 18:48:06.168792
+  7 |   1 |      200 | 2025-12-11 18:48:11.932258
+  8 |   1 |      200 | 2025-12-11 18:48:13.856732
+  9 |   1 |       20 | 2025-12-11 18:48:19.671831
+(5 rows)
+
+product id 1 ---> bread ---> 520
+
+#stock#
+stk_id| pid | stock_quantity |         created_at         
+----+-----+----------+----------------------------
+  1 |   1 |      1000 | 2025-12-11 18:47:57.089801
+  2 |   2 |      200 | 2025-12-11 18:48:06.168792
+  3 |   1 |      2000 | 2025-12-11 18:48:11.932258
+
+  product id 1 -> add stock ---> 3000
+  current stock = 2480 
+ 
+1000 -> 8am -> person A
+500 -> 9:30am -> person B
+
+current_stock for a product = total_stock - total sales <for that product>
+select sum(stock_quantity) from stock where pid = 1;
+select sum(quantity) from sales where pid=1;
+
+**fetchall()** -> used for scenarios where more than one value is being fetched -> returns a list of tuples
+**fetchone()** -> used for scenarios where a single value is returned
+             ->returns a single tuple
+
+(3000,) ---> total_stock
+(520,)  ---> total sales
+
+
+product id 10---> add stock of 1000 -> 1000 - total_stock
+no sales made on product id 10 --> None / Null - total_sales
+Null/None vs Zero -> 
+Null / None -absence / non existence
+Zero -> real value -> 1000 - 1000 = 0
+
+1000 - Null = Invalid
+
+
+**Task**
+1.Write a function to insert stock ,create a stock route and stock page that can  post stock from a form in a modal and also display
+stock data in a datatable
+     *HINT ---> process of posting stock is EXACTLY like posting sales*
+2.Write a function to insert users into users table
+3.Write functions to fetch the following data:
+  -> sales_per_product
+  -> sales_per_day
+  -> profit_per_product
+  -> profit_per_day
+
+  N/B:-each of the above is to appear in its own function
+
+4.Continue building and styling your UI
