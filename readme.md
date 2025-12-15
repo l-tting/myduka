@@ -271,7 +271,7 @@ MyDuka
 ->database.py ---> db connection
 ->main.py. ---> running Flask app
 ->static (folder) 
-    **contains all static files - css, images , videos, icons , favicons
+    **contains all static files -  images ,css, videos, icons , favicons
 ->templates (folder) -> contains all your html files
         *a single html file is called a template*
        -index.html
@@ -438,6 +438,7 @@ select sum(quantity) from sales where pid=1;
 **fetchone()** -> used for scenarios where a single value is returned
              ->returns a single tuple
 
+
 (3000,) ---> total_stock
 (520,)  ---> total sales
 
@@ -452,16 +453,40 @@ Zero -> real value -> 1000 - 1000 = 0
 
 
 **Task**
-1.Write a function to insert stock ,create a stock route and stock page that can  post stock from a form in a modal and also display
-stock data in a datatable
+1.Write a function to insert stock  and get stock ,create a stock route and stock page that can  post stock from a form in a modal and also display stock data in a datatable
      *HINT ---> process of posting stock is EXACTLY like posting sales*
 2.Write a function to insert users into users table
 3.Write functions to fetch the following data:
-  -> sales_per_product
+  -> sales_per_product 
   -> sales_per_day
   -> profit_per_product
   -> profit_per_day
-
-  N/B:-each of the above is to appear in its own function
-
+  N/B:-each of the above is to appear in its own function 
 4.Continue building and styling your UI
+
+
+
+post a product -> 50 -> macbook 
+no stock added on macbook - null
+no sale made on macbook - null
+
+0 vs null/ none
+
+**Flashing**
+- A feedback mechanism in form of one time notifications to the user based on some action 
+- flash messages
+- These flash messages are stored in the server in session storage
+**Session**
+-> Any data stored in session storage has to use a secret key to secure it 
+-> The secret key signs the data stored in session , securing it 
+
+**Message Categories**
+1.Success - successfull responses e.g. product added successfully - green
+2.Danger / Error - error messages e.g insufficient stock - red
+3.Warning - warning - e,g stock depleting - yellow
+4.Info - general info e.g. offers - blue
+
+Flash messages have 2 parts:
+a) Message - the actual text feedback 
+b) Category - broader class of messages grouped by type
+-> we use flash() imported from flask to display messages from flash messages 
