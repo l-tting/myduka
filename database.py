@@ -66,5 +66,12 @@ def insert_users(user_details):
     conn.commit()
 
 
+def check_user_exists(email):
+    cur.execute("select * from users where email = %s ",(email,))
+    user = cur.fetchone()
+    return user
     
+
+
+
 

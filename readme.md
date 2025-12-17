@@ -490,3 +490,42 @@ Flash messages have 2 parts:
 a) Message - the actual text feedback 
 b) Category - broader class of messages grouped by type
 -> we use flash() imported from flask to display messages from flash messages 
+
+**USER REGISTRATION & LOGIN**
+Get 2 forms from Bootstrap :
+1.Registration - full name, email address, phone number, password
+2.Login form - email address, password
+
+Form CheckList To Post Data
+1.action - route where the form is to be submitted
+2.method - what you want the server to do with the resource
+3.name - key used by the server to access and extract data from the form
+4.input type - email, tel, text, number 
+5.button - type submit 
+
+"name":"Henry"
+
+
+
+**REGISTRATION FLOWCHART**
+1.User is provided with a form
+2.User fills the form with their details and submits it to a route
+3.Flask extracts form data using request object
+4.Check that the user who intends to register doesn't exist - hasn't been registered - check using email(unique)
+
+
+
+1 Alice Kamau alice@gmail.com  07123456667  1233 
+
+**Password Hashing**
+-> The process of converting a password input into a fixed length string
+1234 -> "dsio030okmfdkkdkd"
+1234 -> "dsio030okmfdkkdkd"
+-> salting --> adding random data to a password before hashing it
+
+1234cv = "101---ekj83ud898endnjdiid"
+12346g = "909dm90ckkpc-lkxki9cx"
+
+delete from users;
+
+pip install flask-bcrypt
