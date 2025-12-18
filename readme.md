@@ -529,3 +529,18 @@ Form CheckList To Post Data
 delete from users;
 
 pip install flask-bcrypt
+
+
+products - id, name, b_price,s_price
+sales -id,pid,quantity,created_at
+
+sales = selling_price * quantity
+
+sales_per_product - sales, product names
+profit per product - profit , product names
+        -> sales,profit,product names
+
+sales per day - sales , date
+profit per day -profit ,date
+        ->sales,profit,date
+
