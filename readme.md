@@ -544,3 +544,28 @@ sales per day - sales , date
 profit per day -profit ,date
         ->sales,profit,date
 
+        **DATA VISUALIZATION WITH CHARTS**
+-> Representation of data using visual aids
+**Goal** - present complex info in a simpler manner
+--> Types:
+    bar charts, line charts, pie charts, doughnut charts, histograms, frequency polygon,
+    bubble charts, heat maps , scatter plots
+
+    Bar Charts - categorical data (distinct values)
+            -sales and profit per product
+            -x axis --> product names
+            -y axis --> sales and profit
+    Line Charts - continuous data
+            -sales and profit per day
+            -x axis --> date
+            -y axis --> sales & profit 
+
+
+1.User roles
+2.SqlAlchemy
+3.Python virtual environment
+4.OOP - extensively
+5.editing and deleting products
+6.Forgot password
+7.contact us - with mailing (smtp)
+8.Better authentication with flask login

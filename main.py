@@ -99,13 +99,13 @@ def dashboard():
     product_profit = profit_per_product()
     daily_profit = profit_per_day()
 
-    product_names = [i[0] for i in product_sales]
-    sales_per_p = [ i[1] for i in product_sales ]
-    profit_per_p = [ i[1] for i in product_profit]
+    product_names = [ i[0] for i in product_sales ]
+    sales_per_p = [ float(i[1]) for i in product_sales ]
+    profit_per_p = [ float(i[1]) for i in product_profit ]
 
-    date = [i[0] for i in daily_profit]
-    sales_per_d = [ i[1] for i in daily_sales]
-    profit_per_d = [i[1] for i in daily_profit]
+    date = [ str(i[0]) for i in daily_profit]
+    sales_per_d = [ float(i[1]) for i in daily_sales]
+    profit_per_d = [ float(i[1]) for i in daily_profit]
 
 
     return render_template("dashboard.html",
@@ -114,7 +114,7 @@ def dashboard():
                            )
 
 
-@app.route("/login",methods=['gET','POST']) 
+@app.route("/login",methods=['GET','POST']) 
 def login():
     if request.method == 'POST':
         email = request.form['email']
