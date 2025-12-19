@@ -569,3 +569,4 @@ profit per day -profit ,date
 6.Forgot password
 7.contact us - with mailing (smtp)
 8.Better authentication with flask login
+9.Deploying my Flask project with Render
